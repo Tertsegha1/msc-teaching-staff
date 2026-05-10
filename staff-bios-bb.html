@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teaching Staff — MSc Computer Science &amp; Technology</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;background:#f0f4f8;color:#1e293b;min-height:100vh}
+
+/* ── Header ── */
+.hdr{background:linear-gradient(135deg,#1B3A6B 0%,#0f2a52 100%);color:#fff;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:4px solid #0D7377}
+.hdr-left{display:flex;align-items:center;gap:12px}
+.hdr-icon{width:44px;height:44px;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.hdr-text h1{font-size:15px;font-weight:800;line-height:1.25}
+.hdr-text p{font-size:10px;opacity:.65;margin-top:3px}
+.mod-pill{display:inline-block;margin-top:5px;background:#0D7377;color:#fff;font-size:10px;font-weight:700;padding:3px 11px;border-radius:12px;letter-spacing:.3px}
+
+/* ── Wrap ── */
+.wrap{max-width:1140px;margin:0 auto;padding:22px 16px}
+.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:8px}
+.sec-hdr h2{font-size:15px;font-weight:800;color:#1B3A6B}
+.sec-hdr p{font-size:11px;color:#64748b;margin-top:2px}
+.staff-count{font-size:11px;color:#94a3b8;font-weight:600}
+
+/* ── Grid ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+
+/* ── Card ── */
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);border:1px solid #e8eef7;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.card:hover{box-shadow:0 6px 20px rgba(0,0,0,.12);transform:translateY(-2px)}
+.card-top{background:linear-gradient(135deg,#1B3A6B 0%,#0D7377 100%);padding:20px 18px 16px;display:flex;align-items:flex-start;gap:14px}
+.avatar{width:70px;height:70px;border-radius:50%;border:3px solid rgba(255,255,255,.35);object-fit:cover;flex-shrink:0}
+.avatar-init{width:70px;height:70px;border-radius:50%;border:3px solid rgba(255,255,255,.35);background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:23px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-1px}
+.card-info h3{font-size:14px;font-weight:800;color:#fff;line-height:1.3}
+.card-info .role{font-size:11px;color:rgba(255,255,255,.75);margin-top:3px;line-height:1.4}
+.card-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;gap:10px}
+.mod-tags{display:flex;flex-wrap:wrap;gap:4px}
+.mod-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;background:#e0f2fe;color:#0369a1}
+.mod-tag.current{background:#0D7377;color:#fff}
+.bio-txt{font-size:12px;color:#334155;line-height:1.65}
+.bio-txt.clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.research-blk .lbl{font-size:10px;font-weight:700;color:#1B3A6B;text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:2px}
+.research-blk p{font-size:11px;color:#64748b;line-height:1.55}
+.email-link{font-size:11px;color:#0D7377;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+.email-link:hover{text-decoration:underline;color:#0a5e62}
+.office-row{font-size:11px;color:#94a3b8;display:flex;flex-wrap:wrap;gap:8px}
+.card-foot{padding:10px 18px;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between}
+.read-btn{background:none;border:none;font-size:11px;font-weight:700;color:#0D7377;cursor:pointer;padding:0}
+.read-btn:hover{text-decoration:underline}
+
+/* ── Empty ── */
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px}
+.empty .ico{font-size:48px;margin-bottom:12px}
+.empty h3{font-size:15px;font-weight:800;color:#1B3A6B;margin-bottom:6px}
+.empty p{font-size:12px;color:#64748b;max-width:360px;margin:0 auto;line-height:1.6}
+
+/* ── Footer note ── */
+.footer-note{margin-top:28px;padding:14px 18px;background:#fff;border-radius:10px;border-left:4px solid #0D7377;font-size:11px;color:#64748b;line-height:1.6}
+.footer-note strong{color:#1B3A6B}
+
+@media(max-width:560px){.grid{grid-template-columns:1fr}.hdr{padding:12px 14px}.wrap{padding:16px 12px}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-left">
+    <div class="hdr-icon">👩‍🏫</div>
+    <div class="hdr-text">
+      <h1 id="hdrTitle">Teaching Staff</h1>
+      <p id="hdrSub">MSc Computer Science &amp; Technology · Ulster University QAHE</p>
+      <span class="mod-pill" id="modPill" style="display:none"></span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="sec-hdr">
+    <div>
+      <h2 id="secTitle">Our Teaching Team</h2>
+      <p id="secSub">Meet the academic staff delivering your programme</p>
+    </div>
+    <span class="staff-count" id="staffCount"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="footer-note">
+    <strong>Need to get in touch?</strong> Click any staff member's email address to send them a message directly. For general programme enquiries, please contact the programme administration team through Blackboard.
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════════
+//  STAFF DATA — ADD OR UPDATE BIOS IN THIS SECTION ONLY
+//  Each entry follows the same structure. Copy a block to add a new person.
+//  Leave photo as "" to show initials avatar instead.
+//  modules: list the module codes this person teaches (they appear on those pages)
+// ═══════════════════════════════════════════════════════════════════════════
+
+const STAFF = [
+
+  {
+    name:        "Dr. Tertsegha Joseph Anande",
+    title:       "Lecturer & Deputy Programme Leader",
+    email:       "tertseghaanande@gmail.com",
+    modules:     ["CMP701"],
+    bio:         "Dr. Tertsegha Joseph Anande is a Lecturer, Machine Learning Researcher, and Cyber Security Specialist at Ulster University QAHE, Birmingham. A Fellow of the Higher Education Academy (FHEA) and Member of the British Computer Society (MBCS), Dr. Anande brings a wealth of academic and applied expertise to the MSc Computer Science and Technology programme. His work spans postgraduate and undergraduate instruction, with a particular focus on equipping students with practical, industry-relevant skills in data science, machine learning, and digital transformation. Dr. Anande is also the host of the widely followed 'Re-Inventing Myself' weekly series, which demystifies Automated Machine Learning (AutoML) for general and professional audiences.",
+    research:    "Automated Machine Learning (AutoML), Cyber Security, Data Science, Feature Engineering, Model Development and Deployment",
+    office:      "",
+    officeHours: "",
+    photo:       ""   // Paste base64 image string here if available
+  },
+
+  // ── ADD NEW STAFF BELOW — COPY THIS BLOCK AND FILL IN THE DETAILS ──────
+  // {
+  //   name:        "",
+  //   title:       "",
+  //   email:       "",
+  //   modules:     ["COM745"],   // Add all module codes this person teaches
+  //   bio:         "",
+  //   research:    "",
+  //   office:      "",
+  //   officeHours: "",
+  //   photo:       ""
+  // },
+  // ────────────────────────────────────────────────────────────────────────
+
+];
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  MODULE CATALOGUE — Update if modules are added or renamed
+// ═══════════════════════════════════════════════════════════════════════════
+
+const MODULES = {
+  "CMP701": "Digital Transformation",
+  "COM745": "Big Data and Infrastructure",
+  "COM747": "Data Science & Machine Learning",
+  "COM759": "Knowledge Engineering",
+  "COM762": "Deep Learning & Its Application",
+  "COM769": "Scalable Advanced Software Solutions",
+  "BUS701": "Business Analysis Fundamentals",
+  "BMG921": "Strategy for Business Development"
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  APPLICATION LOGIC — Do not edit below this line
+// ═══════════════════════════════════════════════════════════════════════════
+
+const MOD_CODE = window.location.hash.replace('#','').toUpperCase().trim();
+const MOD_NAME = MODULES[MOD_CODE] || null;
+
+(function init(){
+  if(MOD_CODE && MOD_NAME){
+    document.title = MOD_CODE + ' Teaching Staff';
+    document.getElementById('hdrTitle').textContent = MOD_NAME;
+    document.getElementById('modPill').textContent  = MOD_CODE;
+    document.getElementById('modPill').style.display = 'inline-block';
+    document.getElementById('hdrSub').style.display = 'none';
+    document.getElementById('secTitle').textContent = 'Module Teaching Staff';
+    document.getElementById('secSub').textContent   = 'Academic staff delivering ' + MOD_CODE + ': ' + MOD_NAME;
+  }
+  renderGrid();
+})();
+
+function renderGrid(){
+  const visible = STAFF
+    .filter(s => MOD_CODE ? (s.modules||[]).includes(MOD_CODE) : true)
+    .sort((a,b) => a.name.localeCompare(b.name));
+
+  const count = visible.length;
+  document.getElementById('staffCount').textContent =
+    count ? count + ' staff member' + (count !== 1 ? 's' : '') : '';
+
+  const grid = document.getElementById('grid');
+  if(!count){
+    const ctx = MOD_CODE
+      ? 'No staff have been listed for <strong>' + x(MOD_CODE) + '</strong> yet. Please contact the Deputy Programme Leader.'
+      : 'No staff profiles have been added yet.';
+    grid.innerHTML = '<div class="empty"><div class="ico">👥</div><h3>No profiles yet</h3><p>' + ctx + '</p></div>';
+    return;
+  }
+  grid.innerHTML = visible.map(s => card(s)).join('');
+}
+
+function card(s){
+  const id  = toId(s.name);
+  const img = s.photo
+    ? '<img class="avatar" src="' + s.photo + '" alt="' + x(s.name) + '">'
+    : '<div class="avatar-init">' + x(initials(s.name)) + '</div>';
+  const tags = (s.modules||[]).map(m =>
+    '<span class="mod-tag' + (m === MOD_CODE ? ' current' : '') + '">' + x(m) + '</span>'
+  ).join('');
+  const long = s.bio && s.bio.length > 220;
+  return [
+    '<div class="card">',
+      '<div class="card-top">',
+        img,
+        '<div class="card-info">',
+          '<h3>' + x(s.name) + '</h3>',
+          '<div class="role">' + x(s.title||'') + '</div>',
+        '</div>',
+      '</div>',
+      '<div class="card-body">',
+        tags ? '<div class="mod-tags">' + tags + '</div>' : '',
+        s.bio ? '<div class="bio-txt' + (long ? ' clamp' : '') + '" id="bt_' + id + '">' + x(s.bio).replace(/\n/g,'<br>') + '</div>' : '',
+        s.research ? '<div class="research-blk"><span class="lbl">Research &amp; Expertise</span><p>' + x(s.research) + '</p></div>' : '',
+        s.email ? '<a class="email-link" href="mailto:' + x(s.email) + '">&#9993; ' + x(s.email) + '</a>' : '',
+        (s.office || s.officeHours) ? '<div class="office-row">' + (s.office ? '<span>&#128205; ' + x(s.office) + '</span>' : '') + (s.officeHours ? '<span>&#128336; ' + x(s.officeHours) + '</span>' : '') + '</div>' : '',
+      '</div>',
+      '<div class="card-foot">',
+        long ? '<button class="read-btn" onclick="toggle(\'' + id + '\',this)">Read more &#9662;</button>' : '<span></span>',
+        '<span></span>',
+      '</div>',
+    '</div>'
+  ].join('');
+}
+
+function toggle(id, btn){
+  const el = document.getElementById('bt_' + id);
+  el.classList.toggle('clamp');
+  btn.textContent = el.classList.contains('clamp') ? 'Read more ▾' : 'Show less ▴';
+}
+
+function toId(n){ return n.trim().toLowerCase().replace(/[^a-z0-9]+/g,'_'); }
+function initials(n){ return n.split(' ').filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join(''); }
+function x(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+</script>
+</body>
+</html>
