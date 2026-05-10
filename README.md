@@ -1,279 +1,195 @@
-# MSc CS&T Teaching Staff Directory
-**Ulster University QAHE — MSc Computer Science & Technology**
+# MSc CS&T Teaching Staff Directory — Blackboard Ultra
+**Ulster University QAHE · MSc Computer Science & Technology**
 
-A self-contained, single-file teaching staff bio directory designed to be uploaded directly to **Blackboard Ultra**. No external servers, no logins, no maintenance — just upload the file and paste an iframe wherever you need it.
-
----
-
-## 📁 File in This Repo
-
-| File | Purpose |
-|------|---------|
-| `staff-bios-bb.html` | The complete staff directory — handles both the full programme view and individual module views from a single file |
+Pure HTML/CSS staff bio pages designed to be copied and pasted directly into Blackboard Ultra text blocks. No external hosting, no servers, no admin access required — everything lives inside Blackboard.
 
 ---
 
-## 🚀 Getting Started — Upload to Blackboard
+## 📁 Files in This Repo
 
-### Step 1 — Download the file
-Click `staff-bios-bb.html` above → click the **Download** button (or Raw → Save As).
+All files are inside the `blackboard-pages/` folder.
 
-### Step 2 — Upload to Blackboard Content Collection
-1. Log in to **Blackboard Ultra**
-2. Go to **Administrator Panel** → **Content Collection**
-3. Navigate to your institution or course folder (e.g. create a folder called `programme-assets`)
-4. Click **Upload** and select `staff-bios-bb.html`
-5. Once uploaded, **right-click the file → Copy Link** — save this URL, you will need it for every embed
-
-> The URL will look something like:
-> `https://[your-institution].blackboard.com/bbcswebdav/pid-xxx/staff-bios-bb.html`
-
----
-
-## 📌 Embedding on Blackboard Pages
-
-On each Blackboard page, add a **Text** content block → click the **`< >`** (HTML source) button in the editor → paste the relevant code below → Save.
+| File | Blackboard Location |
+|------|-------------------|
+| `00-programme-all-staff.html` | Programme Support area |
+| `01-CMP701-digital-transformation.html` | CMP701 module page |
+| `02-COM745-big-data.html` | COM745 module page |
+| `03-COM747-data-science.html` | COM747 module page |
+| `04-COM759-knowledge-engineering.html` | COM759 module page |
+| `05-COM762-deep-learning.html` | COM762 module page |
+| `06-COM769-scalable-software.html` | COM769 module page |
+| `07-BUS701-business-analysis.html` | BUS701 module page |
+| `08-BMG921-strategy.html` | BMG921 module page |
 
 ---
 
-### Programme Support Area — All Staff
-Shows every staff member on the programme in one directory.
+## 🚀 How to Add a Page to Blackboard Ultra
+
+**Do this once for each of the 9 pages:**
+
+### Step 1 — Open the file
+Click the file name above → click **Raw** (top right of the file view) → Select All (`Ctrl+A`) → Copy (`Ctrl+C`).
+
+### Step 2 — Go to the Blackboard module page
+Open the relevant module or programme support area in Blackboard Ultra.
+
+### Step 3 — Add a Text content block
+Click **+** to add content → choose **Text**.
+
+### Step 4 — Open the HTML source editor
+In the text editor toolbar, click the **`< >`** button (HTML source / code view).
+
+### Step 5 — Paste and save
+Delete any existing content in the source editor → Paste (`Ctrl+V`) → click **Save** or **Done**.
+
+The staff bio page will appear immediately on the Blackboard page.
+
+> **Tip:** Give the content block a title like *"Teaching Staff"* so students can find it easily in the page outline.
+
+---
+
+## ✏️ Adding a New Staff Bio
+
+When a staff member's bio form is received, follow these steps:
+
+### Step 1 — Copy the card template
+Open the relevant module page file (e.g. `02-COM745-big-data.html`) in any text editor (Notepad is fine). Find the comment that says:
+
+```
+<!-- ═══ PASTE STAFF CARDS HERE WHEN BIOS ARE RECEIVED ═══ -->
+```
+
+Paste the following block **above** that comment and fill in the details:
 
 ```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html"
-  width="100%"
-  height="820"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
+<div class="bbs-card">
+  <div class="bbs-card-top">
+    <div class="bbs-av">XX</div>  <!-- Replace XX with the person's initials -->
+    <div class="bbs-cn">
+      <h3>Dr. Full Name Here</h3>
+      <div class="bbs-role">Senior Lecturer</div>
+    </div>
+  </div>
+  <div class="bbs-card-body">
+    <div class="bbs-quals">
+      <span class="bbs-qual">PhD</span>
+      <span class="bbs-qual">FHEA</span>
+      <!-- Add or remove qualification badges as needed -->
+    </div>
+    <div class="bbs-mods">
+      <span class="bbs-mod">COM745</span>
+      <!-- Add more module badges if they teach multiple modules -->
+    </div>
+    <div class="bbs-bio">Paste the full bio text here...</div>
+    <hr class="bbs-divider">
+    <span class="bbs-rlbl">Research &amp; Expertise</span>
+    <div class="bbs-research">List research interests and expertise here...</div>
+    <a class="bbs-email" href="mailto:email@ulster.ac.uk">&#9993; email@ulster.ac.uk</a>
+    <div class="bbs-office">📍 Office location · 🕐 Office hours</div>
+  </div>
+</div>
 ```
 
----
-
-### CMP701 — Digital Transformation
-```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html#CMP701"
-  width="100%"
-  height="750"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
-```
-
----
-
-### COM745 — Big Data and Infrastructure
-```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html#COM745"
-  width="100%"
-  height="750"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
-```
-
----
-
-### COM747 — Data Science & Machine Learning
-```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html#COM747"
-  width="100%"
-  height="750"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
-```
-
----
-
-### COM759 — Knowledge Engineering
-```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html#COM759"
-  width="100%"
-  height="750"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
-```
-
----
-
-### COM762 — Deep Learning & Its Application
-```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html#COM762"
-  width="100%"
-  height="750"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
-```
-
----
-
-### COM769 — Scalable Advanced Software Solutions
-```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html#COM769"
-  width="100%"
-  height="750"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
-```
-
----
-
-### BUS701 — Business Analysis Fundamentals
-```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html#BUS701"
-  width="100%"
-  height="750"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
-```
-
----
-
-### BMG921 — Strategy for Business Development
-```html
-<iframe
-  src="YOUR_CONTENT_COLLECTION_URL/staff-bios-bb.html#BMG921"
-  width="100%"
-  height="750"
-  frameborder="0"
-  style="border:none;border-radius:8px">
-</iframe>
-```
-
-> **How does one file serve all pages?**
-> The `#CMP701` part at the end of the URL is a hash — the file reads it and automatically shows only the staff for that module. Without a hash, it shows everyone.
-
----
-
-## ✏️ Adding or Updating Staff Bios
-
-All staff data lives inside a clearly marked section near the top of `staff-bios-bb.html`. Open the file in **Notepad** (or any text editor) and find:
+### Step 2 — Remove the empty state (if present)
+If the page currently shows the "Staff profiles coming soon" message, delete the entire block between these two comments:
 
 ```
-// ═══════════════════════════════════════════════════════════════════════════
-//  STAFF DATA — ADD OR UPDATE BIOS IN THIS SECTION ONLY
-// ═══════════════════════════════════════════════════════════════════════════
+<!-- ═══ PASTE STAFF CARDS HERE WHEN BIOS ARE RECEIVED ═══ -->
+```
+...and...
+```
+</div>  <!-- end bbs-grid -->
 ```
 
-### Adding a new staff member
+Replace it with your new card and the closing `</div>` tag.
 
-Copy the template block below and paste it inside the `STAFF = [` array, filling in all fields:
+### Step 3 — Update the staff count
+In the `<span class="bbs-count">` tag near the top of the file, update the number (e.g. `2 staff members`). **Delete this span entirely** if you prefer not to show a count.
 
-```javascript
-{
-  name:        "Dr. Jane Smith",
-  title:       "Senior Lecturer",
-  email:       "j.smith@ulster.ac.uk",
-  modules:     ["COM745", "COM747"],   // All modules this person teaches
-  bio:         "Dr. Jane Smith is a Senior Lecturer at Ulster University QAHE with expertise in big data systems and cloud infrastructure. She holds a PhD in Computer Science from the University of Manchester and brings over 12 years of combined academic and industry experience to the programme...",
-  research:    "Big Data Analytics, Cloud Computing, Distributed Systems, Data Engineering",
-  office:      "Block B, Room 214",
-  officeHours: "Mondays 2–4 pm, or by appointment",
-  photo:       ""   // See photo instructions below
-},
-```
+### Step 4 — Re-paste into Blackboard
+Open the file → select all → copy → go to the Blackboard page → edit the Text block → open HTML source → select all → paste → save.
 
-### Updating an existing staff member
-
-Find their entry by name, edit any fields, save the file, and re-upload it to Blackboard Content Collection (overwrite the existing file). The page updates immediately.
-
-### Removing a staff member
-
-Delete their entire `{ ... },` block from the `STAFF` array, save, and re-upload.
+> If a staff member teaches **multiple modules**, add their card to each relevant module page file and to `00-programme-all-staff.html`.
 
 ---
 
 ## 📸 Adding a Profile Photo
 
-Photos are embedded directly inside the HTML file as base64-encoded strings — no separate image files needed.
+By default, cards show the staff member's initials in a coloured circle. To add a photo:
 
-**Step 1** — Collect the staff member's photo (JPEG or PNG, ideally a square headshot)
+**Step 1** — Get a headshot photo (JPEG or PNG, ideally square)
 
-**Step 2** — Convert to base64 using any of these free tools:
+**Step 2** — Convert it to base64 using one of these free tools:
 - [www.base64-image.de](https://www.base64-image.de)
 - [base64.guru/converter/encode/image](https://base64.guru/converter/encode/image)
 
-**Step 3** — Copy the full base64 string (it starts with `data:image/jpeg;base64,...`)
+**Step 3** — In the card HTML, replace the initials `<div>` with an image `<div>`:
 
-**Step 4** — Paste it into the `photo:` field for that staff member:
-
-```javascript
-photo: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA..."
+Replace:
+```html
+<div class="bbs-av">TA</div>
+```
+With:
+```html
+<div class="bbs-av"><img src="data:image/jpeg;base64,PASTE_BASE64_STRING_HERE" alt="Dr. Name"></div>
 ```
 
-> If the `photo` field is left empty (`""`), the card will automatically display the staff member's initials in a coloured circle instead.
+---
+
+## 📋 Blackboard Survey — Collecting Bios from Staff
+
+Set up a **Survey** in Blackboard Ultra (Create → Survey) with the following questions. Once staff submit, you paste their responses into the relevant HTML files.
+
+| # | Question | Type |
+|---|----------|------|
+| 1 | Full name as you want it displayed (include your title, e.g. Dr., Prof.) | Short answer |
+| 2 | Title / Position (e.g. Senior Lecturer, Visiting Lecturer) | Short answer |
+| 3 | Qualifications to display (e.g. PhD, FHEA, MBCS — tick all that apply) | Multiple select |
+| 4 | Ulster University / QAHE email address | Short answer |
+| 5 | Which modules do you teach? (tick all that apply) | Multiple select — list all 8 module codes |
+| 6 | Professional Bio — write in the **third person** (e.g. "Dr. Smith is…"), 2–3 paragraphs | Essay / Long answer |
+| 7 | Research Interests & Areas of Expertise | Long answer |
+| 8 | Office / Room location | Short answer |
+| 9 | Office Hours or student availability | Short answer |
+| 10 | Profile photo | File upload (JPEG or PNG) |
+
+**Settings:** Not graded · Visible to teaching staff only · Responses visible to instructor only.
 
 ---
 
-## 📋 Collecting Bios from Staff — Blackboard Survey Setup
+## 📦 Module Reference
 
-Set up a survey in Blackboard Ultra (**Create → Survey**) using the following questions. Staff complete the form, you receive their responses, then paste them into the HTML file.
-
-| # | Question | Field Type |
-|---|----------|-----------|
-| 1 | Full name (as you want it displayed to students — include your title) | Short answer |
-| 2 | Title / Position (e.g. Senior Lecturer, Visiting Lecturer, Module Tutor) | Short answer |
-| 3 | Ulster University / QAHE email address | Short answer |
-| 4 | Which modules do you teach on this programme? (tick all that apply) | Multiple choice — options: CMP701 Digital Transformation / COM745 Big Data and Infrastructure / COM747 Data Science & Machine Learning / COM759 Knowledge Engineering / COM762 Deep Learning & Its Application / COM769 Scalable Advanced Software Solutions / BUS701 Business Analysis Fundamentals / BMG921 Strategy for Business Development |
-| 5 | Professional Bio — write in the third person (e.g. "Dr. Smith is…"), 2–3 paragraphs covering your background, qualifications, experience, and what you bring to this programme | Essay / Long answer |
-| 6 | Research Interests & Areas of Expertise (comma-separated list is fine) | Long answer |
-| 7 | Office / Room location (leave blank if not applicable) | Short answer |
-| 8 | Office Hours or availability for students | Short answer |
-| 9 | Profile photo | File submission (JPEG or PNG only) |
-
-**Survey settings:**
-- Set to **not graded**
-- Make available to **teaching staff only** or share as a direct link via Teams
-- Set so that only **you (the administrator) can view responses**
+| Code | Module Name | File |
+|------|-------------|------|
+| CMP701 | Digital Transformation | `01-CMP701-digital-transformation.html` |
+| COM745 | Big Data and Infrastructure | `02-COM745-big-data.html` |
+| COM747 | Data Science & Machine Learning | `03-COM747-data-science.html` |
+| COM759 | Knowledge Engineering | `04-COM759-knowledge-engineering.html` |
+| COM762 | Deep Learning & Its Application | `05-COM762-deep-learning.html` |
+| COM769 | Scalable Advanced Software Solutions | `06-COM769-scalable-software.html` |
+| BUS701 | Business Analysis Fundamentals | `07-BUS701-business-analysis.html` |
+| BMG921 | Strategy for Business Development | `08-BMG921-strategy.html` |
 
 ---
 
-## 📦 Module Catalogue Reference
+## 👤 Staff Directory Status
 
-| Code | Module Name |
-|------|-------------|
-| CMP701 | Digital Transformation |
-| COM745 | Big Data and Infrastructure |
-| COM747 | Data Science & Machine Learning |
-| COM759 | Knowledge Engineering |
-| COM762 | Deep Learning & Its Application |
-| COM769 | Scalable Advanced Software Solutions |
-| BUS701 | Business Analysis Fundamentals |
-| BMG921 | Strategy for Business Development |
+| Name | Modules | Status |
+|------|---------|--------|
+| Dr. Tertsegha Joseph Anande | CMP701 | ✅ Live |
+| COM745 staff | COM745 | ⏳ Pending |
+| COM747 staff | COM747 | ⏳ Pending |
+| COM759 staff | COM759 | ⏳ Pending |
+| COM762 staff | COM762 | ⏳ Pending |
+| COM769 staff | COM769 | ⏳ Pending |
+| BUS701 staff | BUS701 | ⏳ Pending |
+| BMG921 staff | BMG921 | ⏳ Pending |
 
-> **Adding a new module?** Open `staff-bios-bb.html`, find the `MODULES` object (just below the `STAFF` array), and add a new line:
-> ```javascript
-> "COM999": "New Module Name",
-> ```
-
----
-
-## 👤 Current Staff
-
-| Name | Modules |
-|------|---------|
-| Dr. Tertsegha Joseph Anande | CMP701 |
-
-*Update this table in the README whenever a new bio is added.*
+*Update this table as bios are received and added.*
 
 ---
 
 ## 📞 Maintained by
-
 **Dr. Tertsegha Joseph Anande**
 Deputy Programme Leader, MSc Computer Science & Technology
-Ulster University QAHE
-[tertseghaanande@gmail.com](mailto:tertseghaanande@gmail.com)
+Ulster University QAHE · [tertseghaanande@gmail.com](mailto:tertseghaanande@gmail.com)
